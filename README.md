@@ -63,3 +63,28 @@ if(data.pin=="18"){gpio18.set(0);socket.emit('robot',{'ack':data.pin});};
 if(data.pin=="14"){gpio14.set(0);socket.emit('robot',{'ack':data.pin});};
 };
 ```
+###Server Code
+ປະກອບມິ 3 ສ່ວນ ຄື:serversocket2.js, store.json ,usernametore.json
+
+  1. serversocket2.js ເປັນ third party services
+ 
+  2. store.json ເປັນສ່ວນເກັບຂໍ້ມູນການເປິດປິດດອກໄຟ
+ 
+  3. usernametore.json ເປັນສ່ວນເກັບລາຍຊືຄົນເຂົ້າໃຊ້
+ 
+ ###serversocket2.js 
+ 
+ຖ້າມີການ ເຊື່ອມຕໍຜ່ານທໍ piໃຫ້ອ່ານຂໍ້ມູນຈາກ store.json ສົ່ງຂໍ້ມູນໃຫ້ client
+ ```
+ 	socket.on('pi', function(d) {
+	console.log("client PI connect");
+	var obj;
+	fs.readFile('./store.json', 'utf8', function (err, data) {
+	if (err) throw err;
+   	obj = JSON.parse(data); 
+  	socket.emit('pi',obj);
+	});
+	});
+```
+
+
