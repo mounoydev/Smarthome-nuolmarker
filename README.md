@@ -29,9 +29,17 @@ pion(data[i]);
   }
 });
 ```
-####ສົ່ງຄ່າເຂົ້າ robot ແຕ່ລະ ຂາທີສັ່ງ
+####
+ຖ້າຮັບຂໍມູນຈາກທໍ robot 
 ```
-socket.on('robot', function(data){ console.log(data);pion(data);});
+socket.on('robot', function(data)
+{
+console.log(data); //ສະແດງຂໍ້ມູນ
+pion(data); //ເອີ້ນ Function Pison
+});
+```
+
+```
 function pion(data) {
 //ກວດສອບ ຄ່າ ແລ້ວ ສັງປິດເປີດ ຕາມຄ່າທີໄດ້
 //ກວດສອບ ຄ່າປິດ
@@ -55,4 +63,4 @@ if(data.pin=="18"){gpio18.set(0);socket.emit('robot',{'ack':data.pin});};
 if(data.pin=="14"){gpio14.set(0);socket.emit('robot',{'ack':data.pin});};
 };
 ```
-```
+
