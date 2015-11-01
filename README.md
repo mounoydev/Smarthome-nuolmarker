@@ -11,6 +11,7 @@
     1. nodejs (https://nodejs.org/en/download/)
     
     2. socket.io (https://github.com/socketio/socket.io/)
+    3. gpio (https://www.npmjs.com/package/gpio)
 
 ##Run Code
   1. Goto Server folder and Run : `node serversocket2.js`
