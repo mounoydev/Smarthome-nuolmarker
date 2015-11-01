@@ -63,7 +63,7 @@ if(data.pin=="14"){gpio14.set(1);socket.emit('robot',{'ack':data.pin});};
 };
 if(data.stt=="on")
 {
-if(data.pin=="4"){gpio4.set(0);};
+if(data.pin=="4"){gpio4.set(0);socket.emit('robot',{'ack':data.pin});};
 if(data.pin=="17"){gpio17.set(0);socket.emit('robot',{'ack':data.pin});};
 if(data.pin=="18"){gpio18.set(0);socket.emit('robot',{'ack':data.pin});};
 if(data.pin=="22"){gpio22.set(0);socket.emit('robot',{'ack':data.pin});};
