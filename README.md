@@ -38,7 +38,7 @@ console.log(data); //ສະແດງຂໍ້ມູນ
 pion(data); //ເອີ້ນ Function Pison
 });
 ```
-function ເປິດປິດໄຟ
+Function ເປິດປິດໄຟ
 ```
 function pion(data) {
 //ກວດສອບ ຄ່າ ແລ້ວ ສັງປິດເປີດ ຕາມຄ່າທີໄດ້
