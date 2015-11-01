@@ -19,7 +19,7 @@
 
   
 ##Client Code
-####ອ່ານຄ່າຈາກດອກໄຟຟ້າຈາກ Server
+####ສວນຕິດຕໍ Server
 ຖ້າຮັບຂໍ້ມູນຈາກທໍ pi ເຊຶ່ງຈະໄດ້ຂໍ້ມູນເປັນ Json Array
 ```
 socket.on('pi', function(data){ console.log('read json data from server'); 
