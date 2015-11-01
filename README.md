@@ -38,7 +38,7 @@ console.log(data); //ສະແດງຂໍ້ມູນ
 pion(data); //ເອີ້ນ Function Pison
 });
 ```
-
+function ເປິດປິດ
 ```
 function pion(data) {
 //ກວດສອບ ຄ່າ ແລ້ວ ສັງປິດເປີດ ຕາມຄ່າທີໄດ້
@@ -63,4 +63,3 @@ if(data.pin=="18"){gpio18.set(0);socket.emit('robot',{'ack':data.pin});};
 if(data.pin=="14"){gpio14.set(0);socket.emit('robot',{'ack':data.pin});};
 };
 ```
-
