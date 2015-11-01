@@ -29,19 +29,21 @@ socket.emit('pi','');
 
 //ສະແດງວ່າ ຂາດການຕິດຕໍ
 socket.on('disconnect', function(){ console.log('disconnect');});
-//socket.emit('pi');
-//ອ່ານຄ່າຈາກດອກໄຟຟ້າຈາກ Server
+
+//ຖ້າຮັບຂໍມູນຈາກທໍ robot
 socket.on('pi', function(data){ console.log('read json data from server'); 
 //obj = JSON.parse(data);
   for(var i=0;i<data.length;i++){
-console.log(data[i]);
-pion(data[i]);
+console.log(data[i]); //ສະແດງຂໍ້ມູນ
+pion(data[i]); //ເອີ້ນ Function Pison
   }
 });
 //ສົ່ງຄ່າເຂົ້າ robot ແຕ່ລະ ຂາທີສັ່ງ
 socket.on('robot', function(data){ console.log(data);pion(data);});
+//Function Pison
 function pion(data) {
-    //ກວດສອບ ຄ່າ ແລ້ວ ສັງປິດເປີດ ຕາມຄ່າທີໄດ້ມາ
+    //ກວດສອບ ຄ່າ ແລ້ວ ສັງປິດເປີດ ຕາມຄ່າທີໄດ້ມ
+    //ກວດສອບ ຄ່າປິດ
 if(data.stt=="off"){
 if(data.pin=="4"){gpio4.set(1);socket.emit('robot',{'ack':data.pin});};
 if(data.pin=="17"){gpio17.set(1);socket.emit('robot',{'ack':data.pin});};
@@ -61,6 +63,7 @@ if(data.pin=="2"){gpio2.set(1);socket.emit('robot',{'ack':data.pin});};
 if(data.pin=="3"){gpio3.set(1);socket.emit('robot',{'ack':data.pin});};
 if(data.pin=="14"){gpio14.set(1);socket.emit('robot',{'ack':data.pin});};
 };
+//ກວດສອບ ຄ່າເປິດ
 if(data.stt=="on")
 {
 if(data.pin=="4"){gpio4.set(0);socket.emit('robot',{'ack':data.pin});};
