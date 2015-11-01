@@ -32,8 +32,7 @@ pion(data[i]);
 ```
 socket.on('robot', function(data){ console.log(data);pion(data);});
 function pion(data) {
-//ກວດສອບ ຄ່າ ແລ້ວ ສັງປິດເປີດ ຕາມຄ່າທີໄດ້ມາ
-
+//ກວດສອບ ຄ່າ ແລ້ວ ສັງປິດເປີດ ຕາມຄ່າທີໄດ້
 //ກວດສອບ ຄ່າປິດ
 if(data.stt=="off"){
 if(data.pin=="4"){gpio4.set(1);socket.emit('robot',{'ack':data.pin});};
