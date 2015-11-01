@@ -5,20 +5,22 @@ console.log("server start");
 var name={};
 var connectCounter=0;
 io.sockets.on('connection', function(socket) {  
-  
-    console.log("client connect");
-	  connectCounter++;
-	 console.log('ONLINE:'+connectCounter);
-		socket.on('pi', function(d) {
+  console.log("client connect");
+  connectCounter++;
+  console.log('ONLINE:'+connectCounter);
+	 
+	  //Send values To Pi //   
+	socket.on('pi', function(d) {
 	console.log("client PI connect");
-		 var obj;
-fs.readFile('./store.json', 'utf8', function (err, data) {
-  if (err) throw err;
-   obj = JSON.parse(data); 
-  socket.emit('pi',obj);
+	var obj;
+	fs.readFile('./store.json', 'utf8', function (err, data) {
+	if (err) throw err;
+   	obj = JSON.parse(data); 
+  	socket.emit('pi',obj);
  
-});
-});
+	});
+	});
+	//end on Send values To Pi 
          
     socket.on('robot', function(data) { 
         
